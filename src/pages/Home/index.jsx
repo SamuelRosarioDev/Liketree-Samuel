@@ -39,7 +39,6 @@ import ThreadsIcon from "../../assets/icons-socialnetworks/threads.svg"
 
 export default function Home() {
 
-    let teste = "www.google.com"
     return (
         <Container>
             <Card>

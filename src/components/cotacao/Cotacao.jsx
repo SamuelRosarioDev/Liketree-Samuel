@@ -26,21 +26,18 @@ export default function Cotacao() {
                 setState(cotacao.BTCBRL.code)
                 setValue(cotacao.BTCBRL.bid);
         
-
                 let i = 0
                 setInterval(() => {
-                    const indexList = i >= listFlags.length ? i = 0 : i
-                    let list = listFlags[indexList]
-
+                    const indexList = i >= listFlags.length ? 0 : i
+                    const list = listFlags[indexList]
 
                     if (indexList < 3) {
                         setFlag(list)
                         setState(indexList === 0 ? cotacao.USDBRL.code : indexList === 1 ? cotacao.EURBRL.code : indexList === 2 ? cotacao.BTCBRL.code : "Erro")
                         setValue(indexList === 0 ? cotacao.USDBRL.bid : indexList === 1 ? cotacao.EURBRL.bid : indexList === 2 ? cotacao.BTCBRL.bid : "Erro");
                     }
-
                     i++
-                }, 10000);
+                }, 5000);
 
             } catch (error) {
                 console.log(error);
@@ -49,7 +46,8 @@ export default function Cotacao() {
         };
         fetchData();
     }, []);
-    let valueFormant = parseFloat(value).toFixed(2)
+
+    const valueFormant = Number.parseFloat(value).toFixed(2)
     return (
         <CotacaoStates>
             <div>
