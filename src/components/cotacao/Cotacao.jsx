@@ -29,15 +29,17 @@ export default function Cotacao() {
                 let i = 0
                 setInterval(() => {
                     const indexList = i >= listFlags.length ? 0 : i
+                    if (indexList === 0) {
+                        i = 0
+                    }
                     const list = listFlags[indexList]
-
                     if (indexList < 3) {
                         setFlag(list)
                         setState(indexList === 0 ? cotacao.USDBRL.code : indexList === 1 ? cotacao.EURBRL.code : indexList === 2 ? cotacao.BTCBRL.code : "Erro")
                         setValue(indexList === 0 ? cotacao.USDBRL.bid : indexList === 1 ? cotacao.EURBRL.bid : indexList === 2 ? cotacao.BTCBRL.bid : "Erro");
                     }
                     i++
-                }, 5000);
+                }, 1500);
 
             } catch (error) {
                 console.log(error);
