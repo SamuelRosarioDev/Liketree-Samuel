@@ -39,7 +39,7 @@ export const Person = styled.div`
     
 `;
 export const Logo = styled.img`
-    width: 100%;
+    width: 50%;
 
 `;
 export const MyInfos = styled.div`
