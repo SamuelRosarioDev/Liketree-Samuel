@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100vw;
-    height: auto;
-    margin-top: 2rem;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +25,7 @@ export const Card = styled.div`
     max-width: 30rem;
     min-width: 20rem;
 `;
-export const Person = styled.div`
+export const Person = styled.fieldset`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,6 +35,7 @@ export const Person = styled.div`
 
     width: 100%;
     background-color: #1C1C1C;
+    border: none;
     
 `;
 export const Logo = styled.img`
@@ -51,7 +51,6 @@ export const MyInfos = styled.div`
 export const MyPhoto = styled.img`
     width: 70%;
     border-radius: 50%;
-    border: dotted 0.3rem #fff;
     box-shadow: 0 0 0.1rem 0 #fff;
 `;
 export const Job = styled.span`
